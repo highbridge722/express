@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Notes
+  ul
+    each note in notes
+      li
+        h2= note.name
+        p Email: #{note.mail}
+        p Tel: #{note.tel}
