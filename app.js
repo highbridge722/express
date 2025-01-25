@@ -8,7 +8,7 @@ require('dotenv').config(); // 追加
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var notesRouter = require('./routes/Notes_from_b'); // 追加
+var notesRouter = require('./routes/notes_from_b'); // 追加
 var catRouter = require('./routes/cat'); // 追加
 const MongoClient = require('mongodb').MongoClient;
 
@@ -60,4 +60,5 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
 
