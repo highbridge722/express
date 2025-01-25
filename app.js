@@ -3,13 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var cors = require('cors'); // 追加
-require('dotenv').config(); // 追加
+var cors = require('cors');
+require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var notesRouter = require('./routes/notes_from_b'); // 追加
-var catRouter = require('./routes/cat'); // 追加
+var notesRouter = require('./routes/notes_from_b');
 const MongoClient = require('mongodb').MongoClient;
 
 var app = express();
@@ -28,11 +27,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/notes', notesRouter); // 追加
-app.use('/cat', catRouter); // 追加
+app.use('/notes', notesRouter);
 
 // MongoDBの接続設定
 const uri = process.env.MONGODB_URI; // 環境変数から接続情報を取得
+if (!uri) {
+  console.error('MongoDB URI is not defined. Please check the .env file.');
+  process.exit(1);
+}
 const client = new MongoClient(uri);
 
 async function run() {
@@ -60,5 +62,8 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+
 
 

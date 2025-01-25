@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "express",
-=======
-  "name": "myapp",
->>>>>>> f245b80847a920c8e988ee89927a186aa772e994
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -11,22 +7,13 @@
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
-<<<<<<< HEAD
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^16.4.7",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "morgan": "~1.9.1"
-=======
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "mongodb": "^6.11.0",
     "morgan": "~1.9.1",
     "request": "^2.88.2"
->>>>>>> f245b80847a920c8e988ee89927a186aa772e994
   }
 }
